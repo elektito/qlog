@@ -13,6 +13,8 @@ projects, but if you want something small to use in your throwaway
 program, and you want it to accept QStrings and have a name with the
 "q" at the beginning, this is a good choice for your.
 
+Oh, and qlog is distributed under GPLv3. Just saying!
+
 Have fun!
 
 # qlog macros
