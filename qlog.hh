@@ -138,6 +138,7 @@ public:
 #define LOG_METHOD_PARAMS(params)
 #define LOG_LEVEL_ERROR(msg)
 #define LOG_INFO(msg)
+#define LOG_LOGIC(msg)
 #define LOG_WARNING(msg)
 #define LOG_ERROR(msg)
 #endif // ifndef ENABLE_LOGGING
