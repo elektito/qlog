@@ -164,6 +164,8 @@ public:
 #ifndef DISABLE_DEBUG_LOGS
 #define LOG_DEBUG(msg) \
   logging::GlobalLog::instance()->logDebug(msg)
+#else
+#define LOG_DEBUG(msg)
 #endif
 
 #ifndef DISABLE_FUNCTION_LOGS
