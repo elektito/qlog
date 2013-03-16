@@ -136,7 +136,6 @@ public:
 #define QLOG_FUNCTION_PARAMS(params)
 #define QLOG_METHOD
 #define QLOG_METHOD_PARAMS(params)
-#define LOG_LEVEL_ERROR(msg)
 #define QLOG_INFO(msg)
 #define QLOG_LOGIC(msg)
 #define QLOG_WARNING(msg)
