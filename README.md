@@ -21,24 +21,24 @@ Have fun!
 
 The following macros can be used to log something passed as a QString:
 
- - LOG_DEBUG(msg)
- - LOG_INFO(msg)
- - LOG_LOGIC(msg)
- - LOG_WARNING(msg)
- - LOG_ERROR(msg)
+ - QLOG_DEBUG(msg)
+ - QLOG_INFO(msg)
+ - QLOG_LOGIC(msg)
+ - QLOG_WARNING(msg)
+ - QLOG_ERROR(msg)
 
 There are also the following macros which also get a QString, but are
 intended for logging function/method calls and their parameter is
 intended to contain the argument list:
 
- - LOG_FUNCTION_PARAMS(params)
- - LOG_METHOD_PARAMS(params)
+ - QLOG_FUNCTION_PARAMS(params)
+ - QLOG_METHOD_PARAMS(params)
 
 The following two methods are equivalents to the two above, only they
 don't get an argument.
 
- - LOG_FUNCTION
- - LOG_METHOD
+ - QLOG_FUNCTION
+ - QLOG_METHOD
 
 All four macros add the name of the function/method at the beginning
 of the message.

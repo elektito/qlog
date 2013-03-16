@@ -131,16 +131,16 @@ public:
 } // namespace qlog
 
 #ifndef ENABLE_LOGGING
-#define LOG_DEBUG(msg)
-#define LOG_FUNCTION
-#define LOG_FUNCTION_PARAMS(params)
-#define LOG_METHOD
-#define LOG_METHOD_PARAMS(params)
+#define QLOG_DEBUG(msg)
+#define QLOG_FUNCTION
+#define QLOG_FUNCTION_PARAMS(params)
+#define QLOG_METHOD
+#define QLOG_METHOD_PARAMS(params)
 #define LOG_LEVEL_ERROR(msg)
-#define LOG_INFO(msg)
-#define LOG_LOGIC(msg)
-#define LOG_WARNING(msg)
-#define LOG_ERROR(msg)
+#define QLOG_INFO(msg)
+#define QLOG_LOGIC(msg)
+#define QLOG_WARNING(msg)
+#define QLOG_ERROR(msg)
 #endif // ifndef ENABLE_LOGGING
 
 // enable the ability to turn on/off synchronization code (this might
@@ -162,62 +162,62 @@ public:
 #endif //!defined(__FUNCTION__) && !defined(__GNUC__)
 
 #ifndef DISABLE_DEBUG_LOGS
-#define LOG_DEBUG(msg) \
+#define QLOG_DEBUG(msg) \
   logging::GlobalLog::instance()->logDebug(msg)
 #else
-#define LOG_DEBUG(msg)
+#define QLOG_DEBUG(msg)
 #endif
 
 #ifndef DISABLE_FUNCTION_LOGS
-#define LOG_FUNCTION \
+#define QLOG_FUNCTION \
   logging::GlobalLog::instance()->logFunction("", __FUNCTION__)
 
-#define LOG_FUNCTION_PARAMS(params) \
+#define QLOG_FUNCTION_PARAMS(params) \
   logging::GlobalLog::instance()->logFunction( \
     "", __FUNCTION__, params)
 
-#define LOG_METHOD \
+#define QLOG_METHOD \
   logging::GlobalLog::instance()->logFunction( \
     typeid(*this).name(), __FUNCTION__)
 
-#define LOG_METHOD_PARAMS(params) \
+#define QLOG_METHOD_PARAMS(params) \
   logging::GlobalLog::instance()->logFunction( \
     typeid(*this).name(), __FUNCTION__, params)
 #else
 
-#define LOG_FUNCTION
-#define LOG_FUNCTION_PARAMS(params)
-#define LOG_METHOD
-#define LOG_METHOD_PARAMS(params)
+#define QLOG_FUNCTION
+#define QLOG_FUNCTION_PARAMS(params)
+#define QLOG_METHOD
+#define QLOG_METHOD_PARAMS(params)
 
 #endif
 
 #ifndef DISABLE_LOGIC_LOGS
-#define LOG_LOGIC(msg) \
+#define QLOG_LOGIC(msg) \
   logging::GlobalLog::instance()->logLogic(msg)
 #else
-#define LOG_LOGIC(msg)
+#define QLOG_LOGIC(msg)
 #endif
 
 #ifndef DISABLE_INFO_LOGS
-#define LOG_INFO(msg) \
+#define QLOG_INFO(msg) \
   logging::GlobalLog::instance()->logInfo(msg)
 #else
-#define LOG_INFO(msg)
+#define QLOG_INFO(msg)
 #endif
 
 #ifndef DISABLE_WARNING_LOGS
-#define LOG_WARNING(msg) \
+#define QLOG_WARNING(msg) \
   logging::GlobalLog::instance()->logWarning(msg)
 #else
-#define LOG_WARNING(msg)
+#define QLOG_WARNING(msg)
 #endif
 
 #ifndef DISABLE_ERROR_LOGS
-#define LOG_ERROR(msg) \
+#define QLOG_ERROR(msg) \
   logging::GlobalLog::instance()->logError(msg)
 #else
-#define LOG_ERROR(msg)
+#define QLOG_ERROR(msg)
 #endif
 
 #endif // ifdef ENABLE_LOGGING
