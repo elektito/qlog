@@ -56,3 +56,29 @@ The following macros determine how qlog behaves:
  - DISABLE_DEBUG_LOGS, DISABLE_FUNCTION_LOGS, DISABLE_LOGIC_LOGS,
    DISABLE_INFO_LOGS, DISABLE_WARNING_LOGS, DISABLE_ERROR_LOGS: These
    can be used to disable certain levels of logging selectively.
+
+# formatting
+
+The following macros can be used to format qlog's output:
+
+  - QLOG_SET_DATETIME_FORMAT(QString format)
+
+    Sets the date-time format to use. Anything acceptable to
+    QDateTime::toString can be used.
+
+  - QLOG_SET_DEBUG_FORMAT(QString format) and friends
+
+    Sets the format of messages logged at the 'debug' level. %1 is
+    replaced with the date-time, and %2 with the logged message
+    itself. Similar macros exist for all other logging levels except
+    for the function/method level: QLOG_SET_LOGIC_FORMAT,
+    QLOG_SET_INFO_FORMAT, QLOG_SET_WARNING_FORMAT,
+    QLOG_SET_ERROR_FORMAT.
+
+  - QLOG_SET_FUNCTION_FORMAT(QString format)
+
+    Sets the format of messages logged at the 'function' level. %1 is
+    replaced with the date-time, %2 with the name of the class (in
+    case of methods), %3 with the function name and and %4 with
+    whatever has been passed as the logged message which, by
+    convention, is the list of arguments to the function/method.

@@ -139,4 +139,32 @@ void GlobalLog::logError(QString msg) {
   printf("%s\n", formatted.toLocal8Bit().constData());
 }
 
+void GlobalLog::setDateTimeFormat(QString format) {
+  this->DateTimeFormat = format;
+}
+
+void GlobalLog::setDebugMsgFormat(QString format) {
+  this->DebugMsgFormat = format;
+}
+
+void GlobalLog::setFunctionMsgFormat(QString format) {
+  this->FunctionMsgFormat = format;
+}
+
+void GlobalLog::setLogicMsgFormat(QString format) {
+  this->LogicMsgFormat = format;
+}
+
+void GlobalLog::setInfoMsgFormat(QString format) {
+  this->InfoMsgFormat = format;
+}
+
+void GlobalLog::setWarningMsgFormat(QString format) {
+  this->WarningMsgFormat = format;
+}
+
+void GlobalLog::setErrorMsgFormat(QString format) {
+  this->ErrorMsgFormat = format;
+}
+
 } // namespace qlog

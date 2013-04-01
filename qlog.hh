@@ -126,6 +126,56 @@ public:
    * Logs 'msg' at level 'error'.
    */
   void logError(QString msg);
+
+  /**
+   * Sets the format of the date-times in the logged messages.
+   * Anything acceptable to QDateTime::toString can be used.
+   */
+  void setDateTimeFormat(QString format);
+
+  /**
+   * Sets the format of messages logged at the 'debug' level. %1 is
+   * replaced with the date-time, and %2 with the logged message
+   * itself.
+   */
+  void setDebugMsgFormat(QString format);
+
+  /**
+   * Sets the format of messages logged at the 'function' level. %1 is
+   * replaced with the date-time, %2 with the name of the class (in
+   * case of methods), %3 with the function name and and %4 with
+   * whatever has been passed as the logged message which, by
+   * convention, is the list of arguments to the method.
+   */
+  void setFunctionMsgFormat(QString format);
+
+  /**
+   * Sets the format of messages logged at the 'logic' level. %1 is
+   * replaced with the date-time, and %2 with the logged message
+   * itself.
+   */
+  void setLogicMsgFormat(QString format);
+
+  /**
+   * Sets the format of messages logged at the 'info' level. %1 is
+   * replaced with the date-time, and %2 with the logged message
+   * itself.
+   */
+  void setInfoMsgFormat(QString format);
+
+  /**
+  * Sets the format of messages logged at the 'warning' level. %1 is
+   * replaced with the date-time, and %2 with the logged message
+   * itself.
+   */
+  void setWarningMsgFormat(QString format);
+
+  /**
+   * Sets the format of messages logged at the 'error' level. %1 is
+   * replaced with the date-time, and %2 with the logged message
+   * itself.
+   */
+  void setErrorMsgFormat(QString format);
 };
 
 } // namespace qlog
@@ -162,25 +212,25 @@ public:
 
 #ifndef DISABLE_DEBUG_LOGS
 #define QLOG_DEBUG(msg) \
-  logging::GlobalLog::instance()->logDebug(msg)
+  qlog::GlobalLog::instance()->logDebug(msg)
 #else
 #define QLOG_DEBUG(msg)
 #endif
 
 #ifndef DISABLE_FUNCTION_LOGS
 #define QLOG_FUNCTION \
-  logging::GlobalLog::instance()->logFunction("", __FUNCTION__)
+  qlog::GlobalLog::instance()->logFunction("", __FUNCTION__)
 
 #define QLOG_FUNCTION_PARAMS(params) \
-  logging::GlobalLog::instance()->logFunction( \
+  qlog::GlobalLog::instance()->logFunction( \
     "", __FUNCTION__, params)
 
 #define QLOG_METHOD \
-  logging::GlobalLog::instance()->logFunction( \
+  qlog::GlobalLog::instance()->logFunction( \
     typeid(*this).name(), __FUNCTION__)
 
 #define QLOG_METHOD_PARAMS(params) \
-  logging::GlobalLog::instance()->logFunction( \
+  qlog::GlobalLog::instance()->logFunction( \
     typeid(*this).name(), __FUNCTION__, params)
 #else
 
@@ -193,32 +243,47 @@ public:
 
 #ifndef DISABLE_LOGIC_LOGS
 #define QLOG_LOGIC(msg) \
-  logging::GlobalLog::instance()->logLogic(msg)
+  qlog::GlobalLog::instance()->logLogic(msg)
 #else
 #define QLOG_LOGIC(msg)
 #endif
 
 #ifndef DISABLE_INFO_LOGS
 #define QLOG_INFO(msg) \
-  logging::GlobalLog::instance()->logInfo(msg)
+  qlog::GlobalLog::instance()->logInfo(msg)
 #else
 #define QLOG_INFO(msg)
 #endif
 
 #ifndef DISABLE_WARNING_LOGS
 #define QLOG_WARNING(msg) \
-  logging::GlobalLog::instance()->logWarning(msg)
+  qlog::GlobalLog::instance()->logWarning(msg)
 #else
 #define QLOG_WARNING(msg)
 #endif
 
 #ifndef DISABLE_ERROR_LOGS
 #define QLOG_ERROR(msg) \
-  logging::GlobalLog::instance()->logError(msg)
+  qlog::GlobalLog::instance()->logError(msg)
 #else
 #define QLOG_ERROR(msg)
 #endif
 
 #endif // ifdef ENABLE_LOGGING
+
+#define QLOG_SET_DATETIME_FORMAT(format) \
+  qlog::GlobalLog::instance()->setDateTimeFormat(format)
+#define QLOG_SET_DEBUG_FORMAT(format) \
+  qlog::GlobalLog::instance()->setDebugMsgFormat(format)
+#define QLOG_SET_LOGIC_FORMAT(format) \
+  qlog::GlobalLog::instance()->setLogicMsgFormat(format)
+#define QLOG_SET_FUNCTION_FORMAT(format) \
+  qlog::GlobalLog::instance()->setFunctionMsgFormat(format)
+#define QLOG_SET_INFO_FORMAT(format) \
+  qlog::GlobalLog::instance()->setInfoMsgFormat(format)
+#define QLOG_SET_WARNING_FORMAT(format) \
+  qlog::GlobalLog::instance()->setWarningMsgFormat(format)
+#define QLOG_SET_ERROR_FORMAT(format) \
+  qlog::GlobalLog::instance()->setErrorMsgFormat(format)
 
 #endif /* _QLOG_HH__ */
