@@ -10,8 +10,8 @@ grab the files and throw them in your project.
 
 Obviously this might not be a good choice for large and complex
 projects, but if you want something small to use in your throwaway
-program, and you want it to accept QStrings and have a name with the
-"q" at the beginning, this is a good choice for your.
+program, and you want it to accept QStrings and have a name with a "q"
+at the beginning, this is a good choice for you.
 
 Oh, and qlog is distributed under GPLv3. Just saying!
 
