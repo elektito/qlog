@@ -1,6 +1,7 @@
 /* -*- Mode:C++; -*- */
 /*
- * This is a small Qt-based, thread-safe logging library.
+ * This is an example program for qlog, a small, Qt-based, thread-safe
+ * logging library.
  *
  * Copyright 2011 Mostafa Razavi <mostafa@sepent.com>
  *
