@@ -16,10 +16,10 @@
 QT += core
 QT -= gui
 
-TARGET = test
+TARGET = example
 TEMPLATE = app
 
-SOURCES = test.cc
+SOURCES = example.cc
 
 INCLUDEPATH += ..
 DEFINES += ENABLE_LOGGING
